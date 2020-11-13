@@ -12,6 +12,7 @@
            </li>
         </ul>
       <% end %>
+      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
       <%= link_to 'Add ingredients', new_cocktail_dose_path(@cocktail), class: 'btn btn-info' %>
       <%= link_to 'Back to cocktail list', cocktails_path, class: 'btn btn-secondary' %>
       <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Do you really want to delete this cocktail?" }, class: 'btn btn-danger ml-8' %>
