@@ -1,9 +1,40 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1501784050997-975d9fdb56d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80);">
+  <div class="container">
+    <h1>Cocktail App</h1>
+    <p>Find cocktails. Make them. Drink them.</p>
+    <a class="btn btn-ghost float-right" href="/cocktails/new">Create your own cocktail</a>
+    <a class="btn btn-ghost float-right mr-3" href="#all_cocktails">View all cocktails</a>
+  </div>
+</div>
+
+
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>All cocktails</h1>
-      <ul class="list-group">
-        <% @cocktails.each do |cocktail| %>
+  <h1 id="all_cocktails">All cocktails</h1>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+        <div class="card m-2" style="width: 18rem;">
+          <% if cocktail.photo.attached? %>
+            <%= cl_image_tag cocktail.photo.key, :class => "card-img-top" %>
+          <% else %>
+            <img src=<%= "https://source.unsplash.com/1600x900/?cocktail,#{cocktail.name}" %> class="card-img-top" alt="...">
+          <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name.capitalize %></h5>
+          <%= link_to 'View', cocktail_path(cocktail), class: 'btn btn-card float-right' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!--
+<div class="container mt-4">
+  <h1>All cocktails</h1>
+    <div class="d-flex row justify-content-between">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card m-2" style="width: 16rem;">
+
+        </div>
           <li class="list-group-item">
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
           </li>
@@ -11,5 +42,76 @@
       </ul>
       <%= link_to "Add a new Cocktail", new_cocktail_path, class: 'btn btn-primary' %>
     </div>
+</div> -->
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsMisterCocktail</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="DTDRA7Y+YQfVF/zsvXSDQ3BeUoHGrj4aIQ+BL2+giVkkpelewV/jKaV8Em0mFaeJCq9DkSINMdGiKzYVjSlJoQ==" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" media="all" href="/assets/application-6550f84c96aea15cc4f434b3b8e7d5233080a9e511f3ed2803ead1d43e9d94ed.css" data-turbolinks-track="reload" />
+    <script src="/packs/js/application-ca08907326a8c2d6a2d6.js" data-turbolinks-track="reload"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  </head>
+
+  <body>
+    <div class="navbar-lewagon">
+      <div><a href="/cocktails"><img alt="Bubbly" width="200" src="/assets/logo_yellow_small-cefc1c3c9ad89b0039be6ccc0f98071da5cb761ab5bccf6aaf6854c0d3657e1c.png" /></a></div>
+      <div><a class="btn btn-banner" href="/cocktails/new">Add cocktail</a></div>
+    </div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1560963689-b5682b6440f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1372&q=80);">
+  <div class="container">
+    <h1 class="mb-3">Mixology for party people</h1>
+    <p class="mb-4">Change your life and learn to mix from the comfort of your home.</p>
+    <a class="btn btn-flat" href="/cocktails/new">Create your own</a>
   </div>
 </div>
+
+
+<div class="container">
+  <h1></h1>
+
+  <div class="cards">
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/denxahfzs/image/upload/c_fill/m1onpytb6fb0ujlrt9pzkdhcdpvq')">
+        <h1><a href="/cocktails/8">Mojito</a></h1>
+      </div>
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/denxahfzs/image/upload/c_fill/c9y78ea6tzdr7tzy9isxr70wa917')">
+        <h1><a href="/cocktails/9">Long Island</a></h1>
+      </div>
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/denxahfzs/image/upload/c_fill/i6rngj0tlmes33385ao97g8r0uto')">
+        <h1><a href="/cocktails/10">Whisky Sour</a></h1>
+      </div>
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/denxahfzs/image/upload/c_fill/3utzvubljzk07aao5ffqggcmox7p')">
+        <h1><a href="/cocktails/11">Negroni</a></h1>
+      </div>
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/denxahfzs/image/upload/c_fill/q058u2podm8tx2soo1tpyiog3pa7')">
+        <h1><a href="/cocktails/12">Cosmopolitan</a></h1>
+      </div>
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/denxahfzs/image/upload/c_fill/k68xc9icxff5wp157womrzcyyc5d')">
+        <h1><a href="/cocktails/13">Sex on the Beach</a></h1>
+      </div>
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80')">
+        <h1><a href="/cocktails/14">Ramona</a></h1>
+      </div>
+  </div>
+  <div class="text-center mt-5">  <a class="btn btn-lg btn-ghost" href="/cocktails/new">Create a Cocktail</a></div>
+</div>
+
+    <div class="footer  mt-5">
+      <div class="footer-links">
+        <a href="https://github.com/mrchvs" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/mariechauvois/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/marie-chauvois-7a101b3a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        made with 💛 by mrchvs
+      </div>
+</div>
+
+  </body>
+</html> -->
