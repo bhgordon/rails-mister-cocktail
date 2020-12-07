@@ -1,4 +1,35 @@
 <div class="container">
+  <div class="card-cocktail">
+    <% if @cocktail.photo.attached? %>
+      <%= cl_image_tag @cocktail.photo.key, :class => "img_cocktail" %>
+    <% else %>
+    <% end %>
+    <div class="card-cocktail-info">
+      <h2><%= @cocktail.name %></h2>
+      <% @cocktail.doses.each do |dose| %>
+        <ul>
+          <li>
+          <%= dose.ingredient.name %> -
+          <strong><%= dose.description %></strong>
+          <%= link_to 'Delete ingredient', dose_path(dose), method: :delete, class: 'btn btn-info' %>
+           </li>
+        </ul>
+      <% end %>
+      <%= link_to 'Add more ingredients', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+      <%= link_to 'Back to cocktail list', cocktails_path, class: 'btn btn-secondary' %>
+      <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Do you really want to delete this cocktail?" }, class: 'btn btn-danger ml-8' %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h1><%= @cocktail.name %></h1>
@@ -13,12 +44,13 @@
         </ul>
       <% end %>
       <% if @cocktail.photo.attached? %>
-        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @cocktail.photo.key, :class => "img_cocktail" %>
       <% else %>
       <% end %>
-      <%= link_to 'Add ingredients', new_cocktail_dose_path(@cocktail), class: 'btn btn-info' %>
+      <%= link_to 'Add more ingredients', new_cocktail_dose_path(@cocktail), class: 'btn btn-info' %>
       <%= link_to 'Back to cocktail list', cocktails_path, class: 'btn btn-secondary' %>
       <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Do you really want to delete this cocktail?" }, class: 'btn btn-danger ml-8' %>
     </div>
   </div>
 </div>
+ -->

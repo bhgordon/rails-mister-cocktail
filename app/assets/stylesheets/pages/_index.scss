@@ -1,2 +1,215 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+.card-cocktail-info {
+  padding: 32px;
+}
+
+.card-cocktail h2{
+  font-family: "Questrial";
+  font-size: 32px;
+}
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 83vh;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.img_cocktail {
+  background-size: cover;
+  background-position: center;
+  height: 79vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+#all_cocktails {
+  margin-left: 16px;
+}
+.home_btn{
+  font-family: "Questrial";
+  margin: 0px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+
+.mb-3 {
+  justify-content: right;
+}
+
+.banner h1{
+  color: whitesmoke;
+  text-align: right;
+  font-family: 'Questrial';
+  padding-top: 48px;
+}
+
+h1 {
+  font-family: 'Questrial';
+  color: #000000bd;
+}
+
+.banner p{
+  color: antiquewhite;
+  text-align: right;
+}
+
+body {
+  font-family: 'Questrial';
+}
+
+.btn-ghost {
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+.btn-card {
+  color: grey;
+  border: 1px solid grey;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-card:hover {
+  opacity: 1;
+  color: grey;
+}
+
+.card-title {
+  font-family: 'Questrial';
+  color: #000000bd;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-cocktail {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 10px;
+}
+
+.card-cocktail h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 8px;
+  color: #000000ba;
+}
+
+.card-cocktail p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-cocktail-info .btn {
+  margin-left: 24px;
+}
+
+.card-cocktail .card-cocktail-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-cocktail-infos .card-cocktail-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+
